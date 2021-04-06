@@ -2,12 +2,13 @@
 Hi! Are you ready to join our team working on an innovative and exciting project? We are looking for a Front-end Developer (Vue 3).
 
 For the test assignment, we would like you to create a simple no-code tool that can manipulate layers on a responsive "canvas".
+
 There are 4 main functions we want to be able to perform:
+
 - The canvas must be able to have multiple layers at one time.
 - The text inside each layer should be uniquely editable.
-- Each can be deleted uniquely from the canvas.
+- Each layer can be deleted uniquely from the canvas.
 - Design for each layer can be affected via tailwindcss.
-
  
 We have provided a base HTML layout for your application.
  
