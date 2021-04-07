@@ -19,4 +19,4 @@ Use small commits and descriptive commit messages while working on the assignmen
 We are expecting you to show both front-end skills and knowledge of Vue 3.
 
 ---
-Use this repository as your starting point but **DO NOT** fork it. Create a private repository on GitHub for your application source code, push it and invite the username of "liamwalder" & "bytesbase" as a collaborator via "Settings > Manage access".
+Use this repository as your starting point but **DO NOT** fork it. Create a private repository on GitHub for your application source code, push it and invite the usernames of "liamwalder" & "bytesbase" as collaborators via "Settings > Manage access".
