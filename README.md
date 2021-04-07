@@ -10,7 +10,7 @@ There are 4 main functions we want to be able to perform:
 - Each layer can be deleted uniquely from the canvas.
 - Design for each layer can be affected via tailwindcss.
  
-We have provided a base HTML layout for your application.
+We have provided a base HTML layout for your application. The final result should be achieved without the use of any plugins / library’s.
  
 It is key for this application to be user-friendly.
  
