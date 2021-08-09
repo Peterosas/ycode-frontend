@@ -22,5 +22,7 @@ It is key for this application to be user-friendly.
  
 Use small commits and descriptive commit messages while working on the assignment. One commit solving one issue.
 
+Do not spend more than 5 hours on this test. This should be more than enough time to complete the given tasks.
+
 ---
 Use this repository as your starting point but **DO NOT** fork it. Create a private repository on GitHub for your application source code, push it and invite the usernames of "liamwalder" & "bytesbase" as collaborators via "Settings > Manage access".
