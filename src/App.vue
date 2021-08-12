@@ -6,9 +6,7 @@
       <section
         class="w-full h-full relative z-10 scrollbar text-center text-none overflow-auto"
       >
-        <div ref="layers">
-         
-        </div>
+        <div ref="layers"></div>
       </section>
 
       <Design />
@@ -36,13 +34,14 @@ export default {
   },
   methods: {
     createLayer() {
-      const layerCanvas = `<div>Hi, I am a layer 👋🏼</div>`;
+      const layerCanvas = `<div>Hi, I am a layer ${this.layerBag.length + 1}👋🏼</div>`;
       this.currentLayer = {title: 'Layer ' + (this.layerBag.length + 1), content: layerCanvas};
       this.layerBag.unshift(this.currentLayer);
-      this.$refs.layers.innerHTML += layerCanvas;
+      this.$refs.layers.innerHTML = this.currentLayer.content;
     },
     selectLayer(index) {
-      this.currentLayer = this.layerBag[index];
+      this.currentLayer = this.layerBag?.[index];
+      this.$refs.layers.innerHTML = this.currentLayer?.content;
     }
   },
   mounted() {
