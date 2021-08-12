@@ -34,9 +34,19 @@ export default {
   },
   methods: {
     createLayer() {
+      //Create a new canvas
       const layerCanvas = `<div>Hi, I am a layer ${this.layerBag.length + 1}👋🏼</div>`;
-      this.currentLayer = {title: 'Layer ' + (this.layerBag.length + 1), content: layerCanvas};
+      
+      //Make the new layer current
+      this.currentLayer = {
+        title: 'Layer ' + (this.layerBag.length + 1), 
+        content: layerCanvas
+      };
+
+      //Save new layer in front of the queue
       this.layerBag.unshift(this.currentLayer);
+
+      //Render canvas in layer
       this.$refs.layers.innerHTML = this.currentLayer.content;
     },
     selectLayer(index) {
