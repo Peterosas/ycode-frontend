@@ -1,15 +1,14 @@
 <template>
   <main class="h-screen w-screen overflow-hidden bg-white flex flex-col">
     <NavBar />
-
     <section class="relative flex flex-1 flex-row overflow-hidden">
-    <Layers />
+      <Layers :createLayer="createLayer" :selectLayer="selectLayer" :layerBag="layerBag" :currentLayer="currentLayer" />
       <section
         class="w-full h-full relative z-10 scrollbar text-center text-none overflow-auto"
       >
-        <button @click="createLayer">add layer</button>
-
-        <div ref="layers"></div>
+        <div ref="layers">
+         
+        </div>
       </section>
 
       <Design />
@@ -29,11 +28,25 @@ export default {
     NavBar,
     Layers
   },
-
+  data() {
+    return {
+      layerBag: [],
+      currentLayer: null
+    }
+  },
   methods: {
     createLayer() {
-      this.$refs.layers.innerHTML = `<div>Hi, I am a layer 👋🏼</div>`;
+      const layerCanvas = `<div>Hi, I am a layer 👋🏼</div>`;
+      this.currentLayer = {title: 'Layer ' + (this.layerBag.length + 1), content: layerCanvas};
+      this.layerBag.unshift(this.currentLayer);
+      this.$refs.layers.innerHTML += layerCanvas;
     },
+    selectLayer(index) {
+      this.currentLayer = this.layerBag[index];
+    }
   },
+  mounted() {
+    
+  }
 };
 </script>
