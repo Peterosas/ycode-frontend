@@ -42,9 +42,10 @@ export default {
         title: 'Layer ' + (this.layerBag.length + 1), 
         content: layerCanvas,
         layerProps: {
-          fontSize: "12px",
-          backgroundColor: "#000",
-          opacity: 1
+          fontSize: "12",
+          unit: "px",
+          backgroundColor: "bg-white",
+          opacity: 10
         }
       };
 
