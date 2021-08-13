@@ -9,7 +9,7 @@
         <div ref="layers"></div>
       </section>
 
-      <Design />
+      <Design :currentLayer="currentLayer" />
     </section>
   </main>
 </template>
@@ -40,7 +40,12 @@ export default {
       //Make the new layer current
       this.currentLayer = {
         title: 'Layer ' + (this.layerBag.length + 1), 
-        content: layerCanvas
+        content: layerCanvas,
+        layerProps: {
+          fontSize: "12px",
+          backgroundColor: "#000",
+          opacity: 1
+        }
       };
 
       //Save new layer in front of the queue
