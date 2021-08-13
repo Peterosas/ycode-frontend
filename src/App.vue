@@ -6,7 +6,7 @@
       <section
         class="w-full h-full relative z-10 scrollbar text-center text-none overflow-auto"
       >
-        <div ref="layers"></div>
+        <div ref="layers" class="p-4"></div>
       </section>
 
       <Design :currentLayer="currentLayer" />
@@ -29,7 +29,8 @@ export default {
   data() {
     return {
       layerBag: [],
-      currentLayer: null
+      currentLayer: null,
+      lastActiveLayer: null
     }
   },
   methods: {
@@ -52,18 +53,39 @@ export default {
       //Save new layer in front of the queue
       this.layerBag.unshift(this.currentLayer);
 
+      //Make active
+      this.selectLayer(this.layerBag.length + 1);
+
       //Render canvas in layer
-      this.$refs.layers.innerHTML = this.currentLayer.content.innerHTML;
+      this.$refs.layers.appendChild(this.currentLayer.content);
+    
     },
     selectLayer(index) {
-      this.currentLayer = this.layerBag?.[index];
-      this.$refs.layers.innerHTML = this.currentLayer?.content;
+      //Validate index
+      if (index >= this.layerBag.length) return;
+
+      //Clear active style
+      if (this.lastActiveLayer) {
+          this.lastActiveLayer.content.style.border = "2px solid #000";
+          this.lastActiveLayer.content.style.zIndex = 0;
+      }
+
+      const layer  = this.layerBag[index];
+      const canvas = layer.content;
+
+      //Select layer styles
+      canvas.style.border = "2px solid blue";
+      canvas.style.zIndex = -1;
+
+      this.currentLayer = layer;
+      this.lastActiveLayer = this.currentLayer;
     },
     
     createEditableCanvas(id) {
       const canvas = document.createElement("canvas");
-      canvas.width = "100%";
-      canvas.height = "100%";
+      canvas.style.position = "absolute";
+      canvas.style.width = "200px";
+      canvas.style.height = "200px";
       canvas.id = id;
       canvas.style.border = "2px solid black";
       return canvas;
