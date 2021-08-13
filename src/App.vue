@@ -35,7 +35,7 @@ export default {
   methods: {
     createLayer() {
       //Create a new canvas
-      const layerCanvas = `<div>Hi, I am a layer ${this.layerBag.length + 1}👋🏼</div>`;
+      const layerCanvas = this.createEditableCanvas("canvas" + this.layerBag.length + 1);
       
       //Make the new layer current
       this.currentLayer = {
@@ -53,11 +53,20 @@ export default {
       this.layerBag.unshift(this.currentLayer);
 
       //Render canvas in layer
-      this.$refs.layers.innerHTML = this.currentLayer.content;
+      this.$refs.layers.innerHTML = this.currentLayer.content.innerHTML;
     },
     selectLayer(index) {
       this.currentLayer = this.layerBag?.[index];
       this.$refs.layers.innerHTML = this.currentLayer?.content;
+    },
+    
+    createEditableCanvas(id) {
+      const canvas = document.createElement("canvas");
+      canvas.width = "100%";
+      canvas.height = "100%";
+      canvas.id = id;
+      canvas.style.border = "2px solid black";
+      return canvas;
     }
   },
   mounted() {
