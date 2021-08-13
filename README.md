@@ -7,7 +7,7 @@ I do hope I would be in your team to prove myself more to you.
 
 If you do permit me, I can still push the complete assignment here on github tomorrow by 8pm Nigeria time.
 
-Thank you for giving the opportunity to participate in this interview.
+Thank you for giving me the opportunity to participate in this interview.
 
 # ycode front-end test
 Hi! Are you ready to join our team working on an innovative and exciting project? We are looking for a Front-end Developer (Vue 3).
