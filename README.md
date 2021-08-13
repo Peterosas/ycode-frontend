@@ -1,3 +1,14 @@
+# TOTAL TIME SPENT ON THE ASSIGNMENT
+Though the assignment isn't completed base on the instruction stated below... I did spend about 4hrs.
+
+I was on a journey when I received your email, so I couldn't give the required amount of attention.
+
+I do hope I would be in your team to prove myself more to you.
+
+If you do permit me, I can still push the complete assignment here on github tomorrow by 8pm Nigeria time.
+
+Thank you for giving the opportunity to participate in this interview.
+
 # ycode front-end test
 Hi! Are you ready to join our team working on an innovative and exciting project? We are looking for a Front-end Developer (Vue 3).
 
